@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Clock</title>
+    <style>
+        *{padding: 0;margin: 0;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: bold;}
+        body{
+            background: url(bg.jpg) no-repeat center fixed;
+            background-size: cover;
+        }
+        .clock{
+            height: 400px;
+            width: 400px;
+            background-color: rgba(255,255,255,0.06);
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            backdrop-filter: blur(20px);
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.3);
+        }
+        .h12{
+            color: rgba(255,255,255,0.8);
+            text-shadow: 2px 2px 5px rgba(255,255,255,0.5);
+            font-size: 200%;
+            position: absolute;
+            /* border: 1px solid white; */
+            left: 50%;
+            margin-left: -5%;
+        }
+        .h6{
+            color: rgba(255,255,255,0.8);
+            text-shadow: 2px 2px 5px rgba(255,255,255,0.5);
+            font-size: 200%;
+            position: absolute;
+            /* border: 1px solid white; */
+            left: 50%;
+            bottom: 0;
+            margin-left: -2.5%;
+        }
+        .h3{
+            color: rgba(255,255,255,0.8);
+            text-shadow: 2px 2px 5px rgba(255,255,255,0.5);
+            font-size: 200%;
+            position: absolute;
+            /* border: 1px solid white; */
+            right: 0;
+            top: 50%;
+            margin-top: -7%;
+            margin-right: 2%;
+        }
+        .h9{
+            color: rgba(255,255,255,0.8);
+            text-shadow: 2px 2px 5px rgba(255,255,255,0.5);
+            font-size: 200%;
+            position: absolute;
+            /* border: 1px solid white; */
+            left: 0;
+            top: 50%;
+            margin-top: -7%;
+            margin-left: 2%;
+        }
+        .hours{
+            background-color: rgba(255,255,255,0.8);
+            box-shadow: 2px 2px 5px rgba(255,255,255,0.5);
+            width: 1%;
+            height: 5%;
+            position: absolute;
+        }
+        .h1{
+            rotate: 30deg;
+            top: 12%;
+            right: 27%;
+            margin-top: -1%;
+            margin-right: -1%;
+        }
+        .h2{
+            rotate: 60deg;
+            top: 27%;
+            right: 12%;
+            margin-top: -1%;
+            margin-right: -1%;
+        }
+        .h4{
+            rotate: 120deg;
+            top: 69%;
+            right: 12%;
+            margin-top: -1%;
+            margin-right: -1%;
+        }
+        .h5{
+            rotate: 150deg;
+            top: 86%;
+            right: 27%;
+            margin-top: -1%;
+            margin-right: -1%;
+        }
+        .h7{
+            rotate: 210deg;
+            top: 86%;
+            left: 27%;
+            margin-top: -1%;
+            margin-right: -1%;
+        }
+        .h8{
+            rotate: 240deg;
+            top: 69%;
+            left: 12%;
+            margin-top: -1%;
+            margin-right: -1%;
+        }
+        .h10{
+            rotate: 300deg;
+            top: 27%;
+            left: 12%;
+            margin-top: -1%;
+            margin-right: -1%;
+        }
+        .h11{
+            rotate: 330deg;
+            top: 12%;
+            left: 27%;
+            margin-top: -1%;
+            margin-right: -1%;
+        }
+    </style>
+    <style>
+        .center{
+            width: 2%;
+            height: 2%;
+            background-color: rgba(255,255,255,0.5);
+            position: absolute;
+            border-radius: 50%;
+            margin:auto;
+            left: 0;right: 0;top: 0;bottom: 0;
+        }
+        .hour{
+            width: 2%;
+            height: 15%;
+            background-color: rgba(255,255,255,0.3);
+            position: absolute;
+            border-radius: 0 0 50px 50px;
+            backdrop-filter: blur(20px);
+            top: 50%;
+            margin-top: -14%;
+            left: 50%;
+            margin-left: -1%;
+            transform-origin: 50% 94%;
+        }
+        .minute{
+            width: 2%;
+            height: 25%;
+            background-color: rgba(255,255,255,0.3);
+            position: absolute;
+            border-radius: 0 0 50px 50px;
+            backdrop-filter: blur(20px);
+            top: 50%;
+            margin-top: -23.4%;
+            left: 50%;
+            margin-left: -1%;
+            transform-origin: 50% 94%;
+        }
+        .second{
+            width: 2%;
+            height: 37%;
+            background-color: rgba(255, 0, 0, 0.473);
+            position: absolute;
+            border-radius: 0 0 50px 50px;
+            backdrop-filter: blur(20px);
+            top: 50%;
+            margin-top: -35.8%;
+            left: 50%;
+            margin-left: -1%;
+            transform-origin: 50% 97%;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <span class="h12">12</span>
+        <span class="h6">6</span>
+        <span class="h3">3</span>
+        <span class="h9">9</span>
+        <span class="hours h1"></span>
+        <span class="hours h2"></span>
+        <span class="hours h4"></span>
+        <span class="hours h5"></span>
+        <span class="hours h7"></span>
+        <span class="hours h8"></span>
+        <span class="hours h10"></span>
+        <span class="hours h11"></span>
+        <span class="center"></span>
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="second"></span>
+    </div>
+</body>
+</html>
+<script>
+    var second = document.querySelector('.second');
+    var minute = document.querySelector('.minute');
+    var hour = document.querySelector('.hour');
+
+    setInterval(function () { 
+        var now = new Date();
+        var nowhour = now.getHours();
+        var nowminute = now.getMinutes();
+        var nowsecond = now.getSeconds();
+        
+        // 60 seconds * 6 = 360 deg
+        var calcsecond = nowsecond*6;
+        // 60 minutes *6 = 360 deg
+        var calcminute = nowminute*6;
+        // 12 hours * 30 = 360 deg
+        var calchour = nowhour*30;
+
+        second.style.rotate = calcsecond+'deg';
+        minute.style.rotate = calcminute+'deg';
+        hour.style.rotate = calchour+'deg';
+    },1000)
+</script>
